@@ -1,0 +1,45 @@
+@import '../../scss/component';
+.Wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fafafa;
+  position: relative;
+}
+.Container {
+  background: white;
+  padding: 1.5rem 4rem;
+}
+.InnerWrapper {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+.Title {
+  font-size: 1.5rem;
+}
+.Description {
+  font-size: .875rem;
+}
+.Button {
+  margin-top: 1rem;
+  @include Button;
+}
+.ButtonSettings {
+  position: absolute;
+  right: 15vw;
+  top: 20%;
+  padding: .75rem;
+  color: black;
+  background-color: #fafafa;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    background-color: #ffffff;
+    color: rgba(purple,.7);
+  }
+}

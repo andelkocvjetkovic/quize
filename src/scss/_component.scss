@@ -1,0 +1,16 @@
+@mixin Button {
+  background: transparent;
+  border: 1px solid rgba(purple,.7);
+  color: rgba(purple,.7);
+  padding: .5rem;
+  transition: background-color 200ms ease-out;
+  &:hover {
+    background-color: rgba(purple,.7);
+    color: #fafafa;
+  }
+  &:disabled {
+    border-color: rgba(black,.2);
+    color: rgba(black,.2);
+    background-color: transparent;
+  }
+}

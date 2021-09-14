@@ -1,0 +1,21 @@
+.Wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(#0000,.05);
+}
+.Container {
+  width: 70vw;
+  background: #fafafa;
+  padding: 2rem 4rem;
+}
+.ButtonWrapper {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-template-rows: repeat(2,1fr);
+  column-gap: 1.5rem;
+  row-gap: 1rem;
+}

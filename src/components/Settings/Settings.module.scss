@@ -1,0 +1,31 @@
+@import '../../scss/component';
+
+.Form {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.WrapperInput {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: .5rem;
+}
+
+.Submit {
+  display: block;
+  width: 100%;
+  margin-top: 2rem;
+  @include Button;
+}
+
+.Input {
+  padding: 0 1rem;
+  height: 2rem;
+  border: none;
+  border-bottom: 1px solid rgba(black, .6);
+
+  &:focus {
+    border-color: rgba(purple, .7);
+  }
+}

@@ -1,0 +1,25 @@
+$modal-bg: #000;
+.Wrapper {
+  cursor: pointer;
+  z-index: 300 ;
+  background-color: rgba($modal-bg,.05);
+  width: 100vw;
+  height: 100vh;
+  position: fixed ;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Modal {
+  cursor: auto ;
+  background: #fafafa;
+  border-radius: .25rem;
+  width: 60vw;
+  height: 70vh;
+  padding: 1rem 2rem;
+  max-height: 80vh;
+  max-width: 90vw;
+  overflow: auto;
+}

@@ -1,0 +1,42 @@
+@import '../../scss/component';
+.Wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Container {
+  width: 70vw;
+  height: 60vh;
+}
+.EndOfGame {
+  font-size: 2rem;
+  color: rgba(purple,.6);
+  text-align: center;
+  padding: 3rem 1rem;
+}
+.ScoreTitle {
+  font-size: 2rem;
+  text-align: center;
+  padding: 1rem 0;
+}
+.ScoreWrapper {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 2rem;
+}
+.Correct {
+  color: green;
+}
+.Wrong {
+  color: red;
+}
+.Button {
+  display: block;
+  margin: 2rem auto 0;
+  @include Button;
+}

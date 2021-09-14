@@ -1,0 +1,24 @@
+.Wrapper {
+  padding: 1rem;
+  justify-content: space-between;
+  background-color: #fff;
+  border: 1px solid rgba(purple,.7);
+  position: relative;
+}
+.ID {
+  background-color: rgba(purple,.7);
+  color: #fff;
+  height: 100%;
+  width: 2rem;
+  top: 0;
+  left: 0;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Answer {
+  display: block;
+  width: calc(100% - 2rem);
+  margin-left: 2rem;
+}
