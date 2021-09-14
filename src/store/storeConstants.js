@@ -1,0 +1,2 @@
+export const ACTION_TEST = 'ACTION_TEST'
+export const ACTION_UPDATE_TEST = 'ACTION_UPDATE_TEST'
