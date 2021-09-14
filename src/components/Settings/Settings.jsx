@@ -7,7 +7,7 @@ const BASE_API = 'https://opentdb.com/api.php?type=multiple&encode=url3986'
 const NUMBER_OF_QUESTION = 'amount';
 const SELECT_CATEGORY = 'selectCategory'
 const SELECT_DIFFICULTY = 'selectDifficulty';
-const DIFFICULTY = ['easy', 'medium', 'hard']
+export const DIFFICULTY = ['easy', 'medium', 'hard']
 
 
 export default function Settings({setUrl, onClose}) {
