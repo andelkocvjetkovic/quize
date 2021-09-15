@@ -1,10 +1,12 @@
 import {takeEvery, select, put} from "redux-saga/effects";
 import {incrementIdx, resetIdx, selectCurrentIdx} from "../../reducers/currentIdxSlice";
 import {endGame} from "../../reducers/gameSlice";
+import {selectQuestions} from "../../reducers/questionsSlice";
 
 function* handleWatchIncrementIdx() {
   const currentIdx = yield select(selectCurrentIdx);
-  if(currentIdx + 1 === 10) {
+  const question = yield select(selectQuestions);
+  if(currentIdx + 1 === question.length) {
     yield put(resetIdx())
     yield put(endGame())
   } else {
