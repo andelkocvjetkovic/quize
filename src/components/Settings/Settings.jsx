@@ -1,19 +1,24 @@
 import React, {useEffect, useState} from 'react';
 
 import styles from './Settings.module.scss';
+import {useDispatch, useSelector} from "react-redux";
+import {ACTION_UPDATE_API} from "../../store/saga/sagas/watchApiChange";
+import {LOADING, selectLoadingStatus, setIdleStatus, setLoadingStatus} from "../../store/reducers/loadingStatusSlice";
 
 const CATEGORY_LINK = 'https://opentdb.com/api_category.php';
-const BASE_API = 'https://opentdb.com/api.php?type=multiple&encode=url3986'
 const NUMBER_OF_QUESTION = 'amount';
 const SELECT_CATEGORY = 'selectCategory'
 const SELECT_DIFFICULTY = 'selectDifficulty';
 export const DIFFICULTY = ['easy', 'medium', 'hard']
 
 
-export default function Settings({setUrl, onClose}) {
+export default function Settings({onClose}) {
   const [categoryList, setCategoryList] = useState([]);
+  const isLoading = useSelector(selectLoadingStatus) === LOADING;
+  const dispatch = useDispatch();
 
   useEffect(() => {
+    dispatch(setLoadingStatus());
     fetch(CATEGORY_LINK)
       .then(res => {
         if (res.ok) {
@@ -26,6 +31,9 @@ export default function Settings({setUrl, onClose}) {
         setCategoryList(data.trivia_categories);
       })
       .catch(console.log)
+      .finally(() => {
+        dispatch(setIdleStatus());
+      })
   }, [])
 
   function handleSubmit(e) {
@@ -37,16 +45,12 @@ export default function Settings({setUrl, onClose}) {
     const uri = [];
     if (category !== 'anyCategory') {
       uri.push(`category=${encodeURIComponent(category)}`);
-    }else if(difficulty !== 'anyDifficulty') {
+    }
+    if (difficulty !== 'anyDifficulty') {
       uri.push(`difficulty=${encodeURIComponent(difficulty)}`);
     }
     uri.push(`amount=${amount}`);
-    let newUrl = BASE_API;
-    uri.forEach(u => {
-      newUrl += '&';
-      newUrl += u;
-    })
-    setUrl(newUrl);
+    dispatch(ACTION_UPDATE_API(uri));
     onClose();
   }
 
@@ -73,7 +77,7 @@ export default function Settings({setUrl, onClose}) {
           {DIFFICULTY.map((d, idx) => <option key={idx} value={d}>{d}</option>)}
         </select>
       </div>
-      <button className={styles.Submit} type='submit'>Save changes</button>
+      <button disabled={isLoading} className={styles.Submit} type='submit'>Save changes</button>
     </form>
   );
 }

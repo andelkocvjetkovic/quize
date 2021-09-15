@@ -3,58 +3,42 @@ import QuestionMultiple from "./components/QuestionMultiple/QuestionMultiple";
 import StartScreen from "./components/StartSceen/StartScreen";
 import EndScreen from "./components/EndScreen/EndScreen";
 import PlayingScreen from "./components/PlayingScreen/PlayingScreen";
+import {useDispatch, useSelector} from "react-redux";
+import {
+  GAME_END,
+  GAME_PLAYING,
+  GAME_START,
+  selectGameStatus,
+} from "./store/reducers/gameSlice";
+import {selectCurrentIdx} from "./store/reducers/currentIdxSlice";
+import {ACTION_INCREMENT_IDX} from "./store/saga/sagas/watchIncrementIdx";
+import {answerUserScore, selectUserScore} from "./store/reducers/userScoreSlice";
+import {selectQuestions} from "./store/reducers/questionsSlice";
 
 const gameState = ['start', 'playing', 'end'];
 const START_URL = 'https://opentdb.com/api.php?amount=10&type=multiple&encode=url3986';
 
 function App() {
-  const [appState, setAppState] = useState(() => gameState[0]);
-  const [questions, setQuestions] = useState([]);
-  const [currentIdx, setCurrentIdx] = useState(0);
-  const [userScore, setUserScore] = useState([])
+  const gameStatus = useSelector(selectGameStatus);
+
+  // const [appState, setAppState] = useState(() => gameState[0]);
+  // const [questions, setQuestions] = useState([]);
+  // const [currentIdx, setCurrentIdx] = useState(0);
+  // const [userScore, setUserScore] = useState([])
   const [isPending, setIsPending] = useState(false);
   const [url, setUrl] = useState(() => START_URL);
-  useLayoutEffect(() => {
-    //if it is 0 no need to increase currentIdx
-    if (userScore.length !== 0) {
-      setCurrentIdx(idx => {
-        const newIdx = idx + 1;
-        if (newIdx === questions.length) {
-          //game ends because no more question to answer
-          setAppState(gameState[2]);
-          //restart currentIdx
-          return 0
-        }
-        return newIdx;
-      })
-    }
-  }, [userScore]);
-  useEffect(() => {
-    if (appState === gameState[0]) {
-      fetchQuestions();
-    }
-  }, [appState]);
+
+  // useEffect(() => {
+  //   if (gameStatus === GAME_START) {
+  //     // fetchQuestions();
+  //   }
+  // }, [gameStatus]);
   useEffect(() => {
     if (url !== START_URL) {
       fetchQuestions();
     }
   }, [url])
 
-  function answerQuestion(answer) {
-    //get user question
-    const correctAnswer = decodeURIComponent(questions[currentIdx].correct_answer);
-    setUserScore(userAnswers => [...userAnswers, answer === correctAnswer])
-  }
-
-  function startQuiz() {
-    setAppState(gameState[1]);
-  }
-
-  function playAgain() {
-    //goto start screen
-    setAppState(gameState[0])
-    setUserScore([]);
-  }
 
   function fetchQuestions() {
     setIsPending(true);
@@ -73,18 +57,12 @@ function App() {
       .finally(() => setIsPending(false));
   }
 
-  if (appState === gameState[0]) {
-    return (<StartScreen startQuiz={startQuiz} isPending={isPending} setUrl={setUrl}/>)
-  } else if (appState === gameState[1]) {
-    return <PlayingScreen
-      key={questions[currentIdx].question.slice(0, 10)}
-      question={questions[currentIdx]}
-      answerOnQuestion={answerQuestion}
-      questionsLength={questions.length}
-      currentQuestion={currentIdx + 1}
-    />
-  } else if (appState === gameState[2]) {
-    return <EndScreen score={userScore} playAgain={playAgain}/>
+  if (gameStatus === GAME_START) {
+    return (<StartScreen isPending={isPending} setUrl={setUrl}/>)
+  } else if (gameStatus === GAME_PLAYING) {
+    return <PlayingScreen/>
+  } else if (gameStatus === GAME_END) {
+    return <EndScreen/>
   } else {
     return <div>Something went terribly wrong</div>
   }
