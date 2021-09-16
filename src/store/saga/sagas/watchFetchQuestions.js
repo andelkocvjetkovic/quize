@@ -1,12 +1,13 @@
 import {takeLatest, call, select, put} from 'redux-saga/effects'
 import {selectCurrentApi} from "../../reducers/apiSlice";
 import {fetchQuestions} from "../../reducers/questionsSlice";
-import {setIdleStatus, setLoadingStatus, setSuccessStatus} from "../../reducers/loadingStatusSlice";
+import {setIdleStatus, setLoadingStatus} from "../../reducers/loadingStatusSlice";
 
 function* handleFetchQuestions() {
   const endPoint = yield select(selectCurrentApi);
   try {
     yield put(setLoadingStatus());
+    console.log(window.fetch);
     const resp = yield call(fetch, endPoint);
     if (!resp.ok) {
       throw Error(resp.statusText);

@@ -1,5 +1,5 @@
 import React from 'react'
-import StartScreen from "./components/StartSceen/StartScreen";
+import StartScreen from "./components/StartScreen/StartScreen";
 import EndScreen from "./components/EndScreen/EndScreen";
 import PlayingScreen from "./components/PlayingScreen/PlayingScreen";
 import {useSelector} from "react-redux";

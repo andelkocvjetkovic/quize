@@ -18,6 +18,7 @@
     "@babel/plugin-syntax-jsx": "^7.14.5",
     "@babel/preset-env": "^7.15.4",
     "@babel/preset-react": "^7.14.5",
+    "babel-plugin-transform-vite-meta-env": "1.0.3",
     "@testing-library/dom": "^8.3.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
@@ -71,6 +72,7 @@
   "babel": {
     "env": {
       "test": {
+        "plugins": ["babel-plugin-transform-vite-meta-env"],
         "presets": [
           "react-app"
         ]

@@ -1,20 +1,14 @@
 import React, {useState} from 'react';
 import Modal from "../Modal/Modal";
-import styles from './StartSceen.module.scss';
+import styles from './StartScreen.module.scss';
 import Settings from "../Settings/Settings";
 import {playGame} from "../../store/reducers/gameSlice";
 import {useDispatch, useSelector} from "react-redux";
 import {LOADING, selectLoadingStatus} from "../../store/reducers/loadingStatusSlice";
+import StartGame from "../StartGame/StartGame";
 
 export default function StartScreen() {
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
-  const dispatch = useDispatch();
-
-  const isLoading = useSelector(selectLoadingStatus) === LOADING;
-
-  function startQuiz() {
-    dispatch(playGame());
-  }
 
   function toggleSettings() {
     setIsSettingsOpen(value => !value);
@@ -26,13 +20,7 @@ export default function StartScreen() {
 
   return (
     <div className={styles.Wrapper}>
-      <div className={styles.Container}>
-        <h3 className={styles.Title}>Welcome to Codepool quizzzz</h3>
-        <div className={styles.InnerWrapper}>
-          <div className={styles.Description}>This is a quiz application built using ReactJS.</div>
-          <button disabled={isLoading} onClick={startQuiz} className={styles.Button}>Start the quiz</button>
-        </div>
-      </div>
+      <StartGame />
       <button onClick={toggleSettings} className={styles.ButtonSettings}>
         <svg xmlns="http://www.w3.org/2000/svg" style={{width: '1.5rem', height: '1.5rem'}}
              fill="none" viewBox="0 0 24 24"

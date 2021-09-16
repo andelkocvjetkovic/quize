@@ -8,25 +8,7 @@
   background: #fafafa;
   position: relative;
 }
-.Container {
-  background: white;
-  padding: 1.5rem 4rem;
-}
-.InnerWrapper {
-  margin-top: 2rem;
-  display: flex;
-  flex-direction: column;
-}
-.Title {
-  font-size: 1.5rem;
-}
-.Description {
-  font-size: .875rem;
-}
-.Button {
-  margin-top: 1rem;
-  @include Button;
-}
+
 .ButtonSettings {
   position: absolute;
   right: 15vw;

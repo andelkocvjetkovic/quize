@@ -8,7 +8,6 @@ import store from "../store/store";
 
 beforeEach(() => {
   mockSuccessfulResponse()
-
 });
 
 describe('<App />', () => {
