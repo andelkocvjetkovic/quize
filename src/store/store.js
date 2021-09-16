@@ -2,6 +2,7 @@ import {applyMiddleware, createStore,compose} from "redux";
 import createSagaMiddleware from 'redux-saga'
 import rootSagas from "./saga/rootSaga";
 import rootReducer from "./reducers/reducer";
+import React from "react";
 
 const composeEnhancers = import.meta.env.PROD
   ? compose
@@ -15,3 +16,5 @@ const store = createStore(
 )
 sagaMiddleware.run(rootSagas)
 export default store
+
+

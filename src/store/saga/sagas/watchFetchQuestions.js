@@ -7,7 +7,6 @@ function* handleFetchQuestions() {
   const endPoint = yield select(selectCurrentApi);
   try {
     yield put(setLoadingStatus());
-    console.log(window.fetch);
     const resp = yield call(fetch, endPoint);
     if (!resp.ok) {
       throw Error(resp.statusText);
