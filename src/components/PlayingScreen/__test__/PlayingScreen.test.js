@@ -89,6 +89,7 @@ describe('<PlayingScreen />', () => {
       name:
         new RegExp(decode(firstQuestion.correct_answer), 'i')
     });
+    
     userEvent.click(answerFirstQuestion);
     const secondQuestion = mockResponseQuestion.results[1];
     getByText(decode(secondQuestion.question));
