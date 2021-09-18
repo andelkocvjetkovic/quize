@@ -3,21 +3,22 @@ import {render} from "@testing-library/react";
 import Modal from "../Modal";
 import userEvent from "@testing-library/user-event";
 
-
+let rootModal;
 beforeEach(() => {
-  const rootModal = document.createElement('div');
+  rootModal = document.createElement('div');
   rootModal.setAttribute('id', 'portal-root');
   document.body.appendChild(rootModal);
   global.scrollTo = jest.fn()
 })
-
+afterEach(() => {
+  document.body.removeChild(rootModal);
+})
 
 describe('<Modal />',() => {
   it('should render without error', function () {
     render(<Modal />)
   });
   it('should render children props', function () {
-
     const onClose = jest.fn();
     const children = <div>Hello from modal <button onClick={onClose}>Close me</button></div>;
     const {getByText} =  render(<Modal children={children} /> )
@@ -26,7 +27,7 @@ describe('<Modal />',() => {
     userEvent.click(closeMeBtn);
     expect(onClose).toBeCalledTimes(1);
   });
-  it('should close modal on click outside', function () {
+  it('should close modal on click outside modal window', function () {
     const onClose = jest.fn();
     const children = <div>Hello from modal<button onClick={onClose}>Close me</button></div>
     const {getByTestId} = render(<Modal onClose={onClose} children={children}/>)
@@ -42,7 +43,7 @@ describe('<Modal />',() => {
     userEvent.click(closeButton);
     expect(onClose).toBeCalledTimes(1);
   });
-  it('should not close modal on click on modal-container', function () {
+  it('should not close modal on click in the modal window', function () {
     const onClose = jest.fn();
     const children = <div>Hello from modal<button onClick={onClose}>Close me</button></div>
     const {getByTestId} = render(<Modal onClose={onClose} children={children}/>)

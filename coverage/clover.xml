@@ -1,77 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1631624968794" clover="3.2.0">
-  <project timestamp="1631624968794" name="All files">
-    <metrics statements="115" coveredstatements="30" conditionals="32" coveredconditionals="5" methods="46" coveredmethods="8" elements="193" coveredelements="43" complexity="0" loc="115" ncloc="115" packages="13" files="14" classes="14"/>
+<coverage generated="1631955668214" clover="3.2.0">
+  <project timestamp="1631955668214" name="All files">
+    <metrics statements="193" coveredstatements="117" conditionals="50" coveredconditionals="25" methods="79" coveredmethods="36" elements="322" coveredelements="178" complexity="0" loc="193" ncloc="193" packages="15" files="26" classes="26"/>
     <package name="src">
-      <metrics statements="42" coveredstatements="0" conditionals="16" coveredconditionals="0" methods="15" coveredmethods="0"/>
-      <file name="App.jsx" path="/Users/jasminka/GitHubRepo/quiz-app/src/App.jsx">
-        <metrics statements="41" coveredstatements="0" conditionals="16" coveredconditionals="0" methods="15" coveredmethods="0"/>
-        <line num="7" count="0" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
-        <line num="11" count="0" type="stmt"/>
+      <metrics statements="10" coveredstatements="0" conditionals="6" coveredconditionals="0" methods="4" coveredmethods="0"/>
+      <file name="App.jsx" path="C:\Users\andel\Desktop\GitHubRepos\quize\src\App.jsx">
+        <metrics statements="9" coveredstatements="0" conditionals="6" coveredconditionals="0" methods="4" coveredmethods="0"/>
         <line num="12" count="0" type="stmt"/>
         <line num="13" count="0" type="stmt"/>
-        <line num="14" count="0" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
-        <line num="17" count="0" type="stmt"/>
+        <line num="17" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="18" count="0" type="stmt"/>
         <line num="19" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="20" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="22" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="21" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="22" count="0" type="stmt"/>
         <line num="24" count="0" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="28" count="0" type="stmt"/>
-        <line num="32" count="0" type="stmt"/>
-        <line num="33" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="34" count="0" type="stmt"/>
-        <line num="37" count="0" type="stmt"/>
-        <line num="38" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="39" count="0" type="stmt"/>
-        <line num="45" count="0" type="stmt"/>
-        <line num="46" count="0" type="stmt"/>
-        <line num="50" count="0" type="stmt"/>
-        <line num="55" count="0" type="stmt"/>
-        <line num="56" count="0" type="stmt"/>
-        <line num="60" count="0" type="stmt"/>
-        <line num="61" count="0" type="stmt"/>
-        <line num="63" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="64" count="0" type="stmt"/>
-        <line num="66" count="0" type="stmt"/>
-        <line num="70" count="0" type="stmt"/>
-        <line num="73" count="0" type="stmt"/>
-        <line num="76" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="77" count="0" type="stmt"/>
-        <line num="78" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="79" count="0" type="stmt"/>
-        <line num="86" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="87" count="0" type="stmt"/>
-        <line num="89" count="0" type="stmt"/>
       </file>
-      <file name="index.jsx" path="/Users/jasminka/GitHubRepo/quiz-app/src/index.jsx">
+      <file name="index.jsx" path="C:\Users\andel\Desktop\GitHubRepos\quize\src\index.jsx">
         <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="6" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.components.Choice">
       <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-      <file name="Choice.jsx" path="/Users/jasminka/GitHubRepo/quiz-app/src/components/Choice/Choice.jsx">
+      <file name="Choice.jsx" path="C:\Users\andel\Desktop\GitHubRepos\quize\src\components\Choice\Choice.jsx">
         <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
         <line num="5" count="0" type="stmt"/>
         <line num="7" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.components.EndScreen">
-      <metrics statements="2" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="2" coveredmethods="0"/>
-      <file name="EndScreen.jsx" path="/Users/jasminka/GitHubRepo/quiz-app/src/components/EndScreen/EndScreen.jsx">
-        <metrics statements="2" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="6" count="0" type="stmt"/>
-        <line num="17" count="0" type="stmt"/>
+      <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <file name="EndScreen.jsx" path="C:\Users\andel\Desktop\GitHubRepos\quize\src\components\EndScreen\EndScreen.jsx">
+        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.components.Modal">
       <metrics statements="4" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
-      <file name="Modal.jsx" path="/Users/jasminka/GitHubRepo/quiz-app/src/components/Modal/Modal.jsx">
+      <file name="Modal.jsx" path="C:\Users\andel\Desktop\GitHubRepos\quize\src\components\Modal\Modal.jsx">
         <metrics statements="4" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
         <line num="8" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="9" count="0" type="stmt"/>
@@ -80,16 +49,19 @@
       </file>
     </package>
     <package name="src.components.PlayingScreen">
-      <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-      <file name="PlayingScreen.jsx" path="/Users/jasminka/GitHubRepo/quiz-app/src/components/PlayingScreen/PlayingScreen.jsx">
-        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="6" count="0" type="stmt"/>
+      <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <file name="PlayingScreen.jsx" path="C:\Users\andel\Desktop\GitHubRepos\quize\src\components\PlayingScreen\PlayingScreen.jsx">
+        <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
         <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.components.Portal">
       <metrics statements="7" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
-      <file name="Portal.jsx" path="/Users/jasminka/GitHubRepo/quiz-app/src/components/Portal/Portal.jsx">
+      <file name="Portal.jsx" path="C:\Users\andel\Desktop\GitHubRepos\quize\src\components\Portal\Portal.jsx">
         <metrics statements="7" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
         <line num="7" count="0" type="stmt"/>
         <line num="8" count="0" type="stmt"/>
@@ -102,7 +74,7 @@
     </package>
     <package name="src.components.QuestionMultiple">
       <metrics statements="8" coveredstatements="0" conditionals="3" coveredconditionals="0" methods="3" coveredmethods="0"/>
-      <file name="QuestionMultiple.jsx" path="/Users/jasminka/GitHubRepo/quiz-app/src/components/QuestionMultiple/QuestionMultiple.jsx">
+      <file name="QuestionMultiple.jsx" path="C:\Users\andel\Desktop\GitHubRepos\quize\src\components\QuestionMultiple\QuestionMultiple.jsx">
         <metrics statements="8" coveredstatements="0" conditionals="3" coveredconditionals="0" methods="3" coveredmethods="0"/>
         <line num="6" count="0" type="stmt"/>
         <line num="10" count="0" type="stmt"/>
@@ -116,75 +88,54 @@
     </package>
     <package name="src.components.QuestionText">
       <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="QuestionText.jsx" path="/Users/jasminka/GitHubRepo/quiz-app/src/components/QuestionText/QuestionText.jsx">
+      <file name="QuestionText.jsx" path="C:\Users\andel\Desktop\GitHubRepos\quize\src\components\QuestionText\QuestionText.jsx">
         <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="4" count="0" type="stmt"/>
       </file>
     </package>
-    <package name="src.components.QuestionTrueFalse">
-      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="QuestionTrueFalse.jsx" path="/Users/jasminka/GitHubRepo/quiz-app/src/components/QuestionTrueFalse/QuestionTrueFalse.jsx">
-        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      </file>
-    </package>
-    <package name="src.components.QuizResult">
-      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="QuizResult.jsx" path="/Users/jasminka/GitHubRepo/quiz-app/src/components/QuizResult/QuizResult.jsx">
-        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      </file>
-    </package>
     <package name="src.components.Settings">
-      <metrics statements="33" coveredstatements="30" conditionals="8" coveredconditionals="5" methods="8" coveredmethods="8"/>
-      <file name="Settings.jsx" path="/Users/jasminka/GitHubRepo/quiz-app/src/components/Settings/Settings.jsx">
-        <metrics statements="33" coveredstatements="30" conditionals="8" coveredconditionals="5" methods="8" coveredmethods="8"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="6" count="1" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="8" count="1" type="stmt"/>
-        <line num="9" count="1" type="stmt"/>
+      <metrics statements="23" coveredstatements="23" conditionals="6" coveredconditionals="6" methods="4" coveredmethods="4"/>
+      <file name="Settings.jsx" path="C:\Users\andel\Desktop\GitHubRepos\quize\src\components\Settings\Settings.jsx">
+        <metrics statements="23" coveredstatements="23" conditionals="6" coveredconditionals="6" methods="4" coveredmethods="4"/>
         <line num="10" count="1" type="stmt"/>
-        <line num="14" count="8" type="stmt"/>
-        <line num="16" count="8" type="stmt"/>
-        <line num="17" count="4" type="stmt"/>
-        <line num="19" count="4" type="cond" truecount="1" falsecount="1"/>
-        <line num="20" count="4" type="stmt"/>
-        <line num="22" count="0" type="stmt"/>
-        <line num="26" count="4" type="stmt"/>
-        <line num="32" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="17" count="12" type="stmt"/>
+        <line num="18" count="12" type="stmt"/>
+        <line num="19" count="12" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
+        <line num="28" count="2" type="stmt"/>
+        <line num="29" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="32" count="2" type="cond" truecount="2" falsecount="0"/>
         <line num="33" count="1" type="stmt"/>
-        <line num="34" count="1" type="stmt"/>
-        <line num="35" count="1" type="stmt"/>
-        <line num="36" count="1" type="stmt"/>
-        <line num="37" count="1" type="stmt"/>
-        <line num="38" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="39" count="0" type="stmt"/>
-        <line num="40" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="41" count="0" type="stmt"/>
-        <line num="43" count="1" type="stmt"/>
-        <line num="44" count="1" type="stmt"/>
-        <line num="45" count="1" type="stmt"/>
-        <line num="46" count="1" type="stmt"/>
-        <line num="47" count="1" type="stmt"/>
-        <line num="49" count="1" type="stmt"/>
-        <line num="50" count="1" type="stmt"/>
-        <line num="53" count="8" type="stmt"/>
-        <line num="65" count="16" type="stmt"/>
-        <line num="73" count="24" type="stmt"/>
+        <line num="35" count="2" type="stmt"/>
+        <line num="36" count="2" type="stmt"/>
+        <line num="37" count="2" type="stmt"/>
+        <line num="40" count="12" type="stmt"/>
+        <line num="52" count="144" type="stmt"/>
+        <line num="60" count="36" type="stmt"/>
       </file>
     </package>
-    <package name="src.components.StartSceen">
-      <metrics statements="4" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="5" coveredmethods="0"/>
-      <file name="StartScreen.jsx" path="/Users/jasminka/GitHubRepo/quiz-app/src/components/StartSceen/StartScreen.jsx">
-        <metrics statements="4" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="5" coveredmethods="0"/>
-        <line num="7" count="0" type="stmt"/>
+    <package name="src.components.StartScreen">
+      <metrics statements="5" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="5" coveredmethods="0"/>
+      <file name="StartScreen.jsx" path="C:\Users\andel\Desktop\GitHubRepos\quize\src\components\StartScreen\StartScreen.jsx">
+        <metrics statements="5" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="5" coveredmethods="0"/>
         <line num="10" count="0" type="stmt"/>
-        <line num="14" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
         <line num="17" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.hooks">
       <metrics statements="10" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
-      <file name="useScrollLock.jsx" path="/Users/jasminka/GitHubRepo/quiz-app/src/hooks/useScrollLock.jsx">
+      <file name="useScrollLock.jsx" path="C:\Users\andel\Desktop\GitHubRepos\quize\src\hooks\useScrollLock.jsx">
         <metrics statements="10" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
         <line num="4" count="0" type="stmt"/>
         <line num="5" count="0" type="stmt"/>
@@ -196,6 +147,175 @@
         <line num="11" count="0" type="stmt"/>
         <line num="12" count="0" type="stmt"/>
         <line num="13" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.store">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="loadingEnum.js" path="C:\Users\andel\Desktop\GitHubRepos\quize\src\store\loadingEnum.js">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.store.reducers">
+      <metrics statements="63" coveredstatements="55" conditionals="25" coveredconditionals="17" methods="27" coveredmethods="14"/>
+      <file name="apiSlice.js" path="C:\Users\andel\Desktop\GitHubRepos\quize\src\store\reducers\apiSlice.js">
+        <metrics statements="11" coveredstatements="10" conditionals="4" coveredconditionals="3" methods="4" coveredmethods="3"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="8" count="48" type="cond" truecount="2" falsecount="1"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="20" count="46" type="stmt"/>
+        <line num="25" count="8" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+      </file>
+      <file name="categoriesSlice.js" path="C:\Users\andel\Desktop\GitHubRepos\quize\src\store\reducers\categoriesSlice.js">
+        <metrics statements="11" coveredstatements="11" conditionals="4" coveredconditionals="4" methods="5" coveredmethods="5"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="11" count="48" type="cond" truecount="3" falsecount="0"/>
+        <line num="13" count="6" type="stmt"/>
+        <line num="20" count="6" type="stmt"/>
+        <line num="26" count="36" type="stmt"/>
+        <line num="32" count="26" type="stmt"/>
+        <line num="33" count="26" type="stmt"/>
+        <line num="35" count="6" type="stmt"/>
+        <line num="36" count="6" type="stmt"/>
+      </file>
+      <file name="currentIdxSlice.js" path="C:\Users\andel\Desktop\GitHubRepos\quize\src\store\reducers\currentIdxSlice.js">
+        <metrics statements="8" coveredstatements="6" conditionals="4" coveredconditionals="2" methods="4" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="5" count="48" type="cond" truecount="1" falsecount="2"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="15" count="48" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+      </file>
+      <file name="gameSlice.js" path="C:\Users\andel\Desktop\GitHubRepos\quize\src\store\reducers\gameSlice.js">
+        <metrics statements="13" coveredstatements="10" conditionals="5" coveredconditionals="2" methods="5" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="10" count="48" type="cond" truecount="1" falsecount="3"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="21" count="48" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+      </file>
+      <file name="questionsSlice.js" path="C:\Users\andel\Desktop\GitHubRepos\quize\src\store\reducers\questionsSlice.js">
+        <metrics statements="11" coveredstatements="11" conditionals="4" coveredconditionals="4" methods="5" coveredmethods="3"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="12" count="48" type="cond" truecount="3" falsecount="0"/>
+        <line num="14" count="8" type="stmt"/>
+        <line num="21" count="8" type="stmt"/>
+        <line num="27" count="32" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="35" count="8" type="stmt"/>
+        <line num="36" count="8" type="stmt"/>
+      </file>
+      <file name="reducer.js" path="C:\Users\andel\Desktop\GitHubRepos\quize\src\store\reducers\reducer.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="8" count="1" type="stmt"/>
+      </file>
+      <file name="userScoreSlice.js" path="C:\Users\andel\Desktop\GitHubRepos\quize\src\store\reducers\userScoreSlice.js">
+        <metrics statements="8" coveredstatements="6" conditionals="4" coveredconditionals="2" methods="4" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="5" count="48" type="cond" truecount="1" falsecount="2"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="17" count="48" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.store.saga">
+      <metrics statements="10" coveredstatements="9" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="3"/>
+      <file name="rootSaga.js" path="C:\Users\andel\Desktop\GitHubRepos\quize\src\store\saga\rootSaga.js">
+        <metrics statements="10" coveredstatements="9" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="3"/>
+        <line num="10" count="6" type="stmt"/>
+        <line num="13" count="6" type="stmt"/>
+        <line num="15" count="6" type="stmt"/>
+        <line num="16" count="6" type="stmt"/>
+        <line num="17" count="6" type="stmt"/>
+        <line num="18" count="6" type="cond" truecount="1" falsecount="1"/>
+        <line num="19" count="6" type="stmt"/>
+        <line num="20" count="6" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="28" count="6" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.store.saga.sagas">
+      <metrics statements="38" coveredstatements="26" conditionals="4" coveredconditionals="1" methods="18" coveredmethods="15"/>
+      <file name="watchApiChange.js" path="C:\Users\andel\Desktop\GitHubRepos\quize\src\store\saga\sagas\watchApiChange.js">
+        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="4" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="17" count="6" type="stmt"/>
+        <line num="20" count="8" type="stmt"/>
+      </file>
+      <file name="watchFetchQuestions.js" path="C:\Users\andel\Desktop\GitHubRepos\quize\src\store\saga\sagas\watchFetchQuestions.js">
+        <metrics statements="14" coveredstatements="12" conditionals="2" coveredconditionals="1" methods="5" coveredmethods="5"/>
+        <line num="6" count="8" type="stmt"/>
+        <line num="7" count="8" type="stmt"/>
+        <line num="8" count="8" type="stmt"/>
+        <line num="9" count="8" type="stmt"/>
+        <line num="11" count="8" type="cond" truecount="1" falsecount="1"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="14" count="8" type="stmt"/>
+        <line num="15" count="8" type="stmt"/>
+        <line num="16" count="80" type="stmt"/>
+        <line num="22" count="240" type="stmt"/>
+        <line num="25" count="8" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="34" count="6" type="stmt"/>
+        <line num="37" count="14" type="stmt"/>
+      </file>
+      <file name="watchIncrementIdx.js" path="C:\Users\andel\Desktop\GitHubRepos\quize\src\store\saga\sagas\watchIncrementIdx.js">
+        <metrics statements="8" coveredstatements="2" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="2"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="18" count="6" type="stmt"/>
+        <line num="20" count="6" type="stmt"/>
+      </file>
+      <file name="watchPlayAgain.js" path="C:\Users\andel\Desktop\GitHubRepos\quize\src\store\saga\sagas\watchPlayAgain.js">
+        <metrics statements="4" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="11" count="6" type="stmt"/>
+        <line num="13" count="6" type="stmt"/>
+      </file>
+      <file name="watchUserScore.js" path="C:\Users\andel\Desktop\GitHubRepos\quize\src\store\saga\sagas\watchUserScore.js">
+        <metrics statements="4" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="13" count="6" type="stmt"/>
+        <line num="16" count="6" type="stmt"/>
       </file>
     </package>
   </project>

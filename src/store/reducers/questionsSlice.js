@@ -1,13 +1,28 @@
+import {IDLE, LOADING} from "../loadingEnum";
+import {createSelector} from 'reselect'
+import {selectCurrentIdx} from "./currentIdxSlice";
+
 const initialState = {
-  questions: []
+  entities: [],
+  status: IDLE,
+
 }
-let QUESTIONS_FETCH = 'question/fetched';
+const QUESTIONS_ADD = 'question/added';
+const QUESTION_LOADING = 'question/loading';
 export default function questionReducer(state = initialState, action) {
 
   switch (action.type) {
-    case QUESTIONS_FETCH: {
+    case QUESTIONS_ADD: {
       return {
-        questions: action.payload
+        ...state,
+        status: IDLE,
+        entities: action.payload
+      }
+    }
+    case QUESTION_LOADING: {
+      return {
+        ...state,
+        status: LOADING
       }
     }
     default: {
@@ -16,7 +31,13 @@ export default function questionReducer(state = initialState, action) {
   }
 }
 
-export const selectQuestions = state => state.questions.questions
+export const selectQuestions = state => state.questions.entities
+export const selectQuestionStatus = state => state.questions.status;
+export const selectCurrentQuestion = createSelector(
+  selectQuestions,
+  selectCurrentIdx,
+  (questions, idx) => questions[idx]
+)
 
-
-export const fetchQuestions = (payload) => ({type: QUESTIONS_FETCH, payload: payload});
+export const addQuestions = (payload) => ({type: QUESTIONS_ADD, payload: payload});
+export const questionsLoading = () => ({type: QUESTION_LOADING});

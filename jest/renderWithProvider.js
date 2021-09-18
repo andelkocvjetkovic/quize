@@ -1,18 +1,23 @@
-import {createStore} from "redux";
+import rootSagas from "../src/store/saga/rootSaga";
+import createSagaMiddleware from "redux-saga";
+import {applyMiddleware, createStore} from "redux";
 import rootReducer from "../src/store/reducers/reducer";
 import {render} from "@testing-library/react";
 import {Provider} from "react-redux";
 import React from "react";
 
-export var dispatch;
-export var getState;
+export default function renderWithProvider(ui, initialState) {
+  const effectMiddleware = next => effect => {
+    return next(effect);
+  };
 
-export function renderWithProviders(ui, initialState) {
+  const sagaMiddleware = createSagaMiddleware({effectMiddlewares: [effectMiddleware]});
   const store = createStore(
     rootReducer,
-    initialState ? initialState : undefined
+    initialState ? initialState : undefined,
+    applyMiddleware(sagaMiddleware)
   )
-  dispatch = store.dispatch;
-  getState = store.getState;
+  sagaMiddleware.run(rootSagas)
+
   return render(<Provider store={store}>{ui}</Provider>)
 }

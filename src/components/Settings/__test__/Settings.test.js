@@ -1,39 +1,40 @@
 import React from 'react'
-import {act, screen, waitFor} from "@testing-library/react";
+import {act} from "@testing-library/react";
 import Settings, {DIFFICULTY} from "../Settings";
 import 'regenerator-runtime/runtime'
 import userEvent from "@testing-library/user-event";
-import {renderWithProviders, dispatch} from "../../../../jest/renderWithProvider";
-import {LOADING, setIdleStatus, setLoadingStatus} from "../../../store/reducers/loadingStatusSlice";
-import {useDispatch} from "react-redux";
-import {wait} from "@testing-library/user-event/dist/utils";
-
+import renderWithProvider from "../../../../jest/renderWithProvider";
+import {mockResponseCategory} from "../../../../jest/mocks/responseMock";
+import {mockFetch} from "../../../../jest/mocks/mockFetch";
 
 beforeEach(() => {
+  mockFetch();
   jest.useFakeTimers();
-  mockSuccessfulResponse();
 })
 afterEach(() => {
   jest.runOnlyPendingTimers()
   jest.useRealTimers();
 })
 
+
+
 describe('<Settings />', () => {
   it('should render without error', async function () {
     await act(async () => {
-      await renderWithProviders(<Settings/>);
+      await renderWithProvider(<Settings/>);
+      jest.runAllTimers();
     })
   })
   it('should render categories in the select options', async function () {
     let getByRole;
     await act(async () => {
-      ({getByRole} = await renderWithProviders(<Settings/>));
+      ({getByRole} = await renderWithProvider(<Settings/>));
       jest.runAllTimers();
     });
 
     const selectCategory = getByRole('combobox', {name: /select category/i});
     const children = selectCategory.children
-    const mockData = mockResponse.trivia_categories;
+    const mockData = mockResponseCategory.trivia_categories;
     expect(children.length).toEqual(mockData.length + 1)
     for (let i = 0; i < children.length; i++) {
       const child = children[i];
@@ -49,7 +50,7 @@ describe('<Settings />', () => {
   it('should render difficulties in the select options', async function () {
     let getByRole;
     await act(async () => {
-      ({getByRole} = await renderWithProviders(<Settings/>));
+      ({getByRole} = await renderWithProvider(<Settings/>));
       jest.runAllTimers();
     });
     const selectDifficulty = getByRole('combobox', {name: /select difficulty/i})
@@ -70,7 +71,7 @@ describe('<Settings />', () => {
     let getByRole;
     let onClose = jest.fn();
     await act(async () => {
-      ({getByRole} = await renderWithProviders(<Settings onClose={onClose}/>));
+      ({getByRole} = await renderWithProvider(<Settings onClose={onClose}/>));
       jest.runAllTimers();
     });
     const submitButton = getByRole('button', {name: /save changes/i});
@@ -81,7 +82,7 @@ describe('<Settings />', () => {
     let getByRole;
     let onClose = jest.fn();
     await act(async () => {
-      ({getByRole} = await renderWithProviders(<Settings onClose={onClose}/>));
+      ({getByRole} = await renderWithProvider(<Settings onClose={onClose}/>));
       jest.runAllTimers();
     });
     const amountInput = getByRole('spinbutton', {name: /number of question/i});
@@ -93,9 +94,9 @@ describe('<Settings />', () => {
     userEvent.type(amountInput, '20');
     expect(amountInput).toHaveValue(20);
 
-    userEvent.selectOptions(selectCategory, mockResponse.trivia_categories[0].id.toString())
-    expect(selectCategory).toHaveValue(mockResponse.trivia_categories[0].id.toString());
-    expect(selectCategory).toHaveTextContent(mockResponse.trivia_categories[0].name);
+    userEvent.selectOptions(selectCategory, mockResponseCategory.trivia_categories[0].id.toString())
+    expect(selectCategory).toHaveValue(mockResponseCategory.trivia_categories[0].id.toString());
+    expect(selectCategory).toHaveTextContent(mockResponseCategory.trivia_categories[0].name);
 
 
     userEvent.selectOptions(selectDifficulty, DIFFICULTY[0]);
@@ -106,56 +107,18 @@ describe('<Settings />', () => {
     expect(onClose).toBeCalledTimes(1);
   });
   it('save changes button should be disabled till fetching is done', async function () {
-    let getByRole, queryByRole;
+    let getByRole;
     let onClose = jest.fn();
     await act(async () => {
-      ({getByRole, queryByRole} = await renderWithProviders(<Settings onClose={onClose}/>))
+      ({getByRole} = await renderWithProvider(<Settings onClose={onClose}/>))
     });
     const saveChanges = getByRole('button', {name: /save changes/i});
     expect(saveChanges).toBeDisabled()
     await act(async () => {
       jest.runAllTimers();
     })
-    expect(queryByRole('button', {name: /save changes/i})).not.toBeDisabled();
-
-
+    expect(getByRole('button', {name: /save changes/i})).not.toBeDisabled();
   });
 })
 
 
-const mockSuccessfulResponse = () => {
-  global.fetch = jest.fn().mockImplementationOnce(() => {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve({
-          ok: true,
-          status: 200,
-          json: () => {
-            return Promise.resolve(mockResponse)
-          },
-        });
-      }, 2000)
-    });
-  });
-};
-
-const mockResponse = {
-  "trivia_categories": [
-    {
-      "id": 9,
-      "name": "General Knowledge"
-    },
-    {
-      "id": 10,
-      "name": "Entertainment: Books"
-    },
-    {
-      "id": 11,
-      "name": "Entertainment: Film"
-    },
-    {
-      "id": 12,
-      "name": "Entertainment: Music"
-    }
-  ]
-}

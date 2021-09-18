@@ -2,10 +2,14 @@ import React from 'react'
 import {render} from "@testing-library/react";
 import Portal from "../Portal";
 
+let rootModal;
 beforeEach(() => {
-  const rootModal = document.createElement('div');
+  rootModal = document.createElement('div');
   rootModal.setAttribute('id', 'portal-root');
   document.body.appendChild(rootModal);
+})
+afterEach(() => {
+  document.body.removeChild(rootModal);
 })
 
 describe('<Portal />', function portal() {

@@ -1,13 +1,13 @@
-import {takeLatest, call, select, put} from 'redux-saga/effects'
+import {call, put, select, takeLatest} from 'redux-saga/effects'
 import {selectCurrentApi} from "../../reducers/apiSlice";
-import {fetchQuestions} from "../../reducers/questionsSlice";
-import {setIdleStatus, setLoadingStatus} from "../../reducers/loadingStatusSlice";
+import {addQuestions, questionsLoading} from "../../reducers/questionsSlice";
 
 function* handleFetchQuestions() {
   const endPoint = yield select(selectCurrentApi);
   try {
-    yield put(setLoadingStatus());
+    yield put(questionsLoading());
     const resp = yield call(fetch, endPoint);
+
     if (!resp.ok) {
       throw Error(resp.statusText);
     }
@@ -22,11 +22,9 @@ function* handleFetchQuestions() {
         incorrect_answers: q.incorrect_answers.map(ia => decodeURIComponent(ia))
       }
     })
-    yield put(fetchQuestions(decodedQuestions));
+    yield put(addQuestions(decodedQuestions));
   } catch (e) {
     console.log(e.message)
-  } finally {
-    yield put(setIdleStatus());
   }
 
 

@@ -1,11 +1,12 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 
 import styles from './Settings.module.scss';
 import {useDispatch, useSelector} from "react-redux";
 import {ACTION_UPDATE_API} from "../../store/saga/sagas/watchApiChange";
-import {LOADING, selectLoadingStatus, setIdleStatus, setLoadingStatus} from "../../store/reducers/loadingStatusSlice";
+import {selectCategories, selectCategoriesStatus} from "../../store/reducers/categoriesSlice";
+import {LOADING} from "../../store/loadingEnum";
 
-const CATEGORY_LINK = 'https://opentdb.com/api_category.php';
+
 const NUMBER_OF_QUESTION = 'amount';
 const SELECT_CATEGORY = 'selectCategory'
 const SELECT_DIFFICULTY = 'selectDifficulty';
@@ -13,28 +14,10 @@ export const DIFFICULTY = ['easy', 'medium', 'hard']
 
 
 export default function Settings({onClose}) {
-  const [categoryList, setCategoryList] = useState([]);
-  const isLoading = useSelector(selectLoadingStatus) === LOADING;
+  const categoryList = useSelector(selectCategories);
+  const isLoading = useSelector(selectCategoriesStatus) === LOADING;
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(setLoadingStatus());
-    fetch(CATEGORY_LINK)
-      .then(res => {
-        if (res.ok) {
-          return res.json();
-        } else {
-          throw Error(res.statusText);
-        }
-      })
-      .then(data => {
-        setCategoryList(data.trivia_categories);
-      })
-      .catch(console.log)
-      .finally(() => {
-        dispatch(setIdleStatus());
-      })
-  }, [])
 
   function handleSubmit(e) {
     e.preventDefault();

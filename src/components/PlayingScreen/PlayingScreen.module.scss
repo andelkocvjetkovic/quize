@@ -1,9 +1,9 @@
 .Wrapper {
   position: relative;
 }
-.CurrentQuestion {
+.Position {
+  composes: Position from '../Position/Position.module.scss';
   position: absolute;
   right: 15vw;
   top: 20%;
-  font-size: 1.5rem;
 }
