@@ -6,7 +6,7 @@ import {selectCurrentQuestion} from "../../store/reducers/questionsSlice";
 import Position from "../Position/Position";
 import {ACTION_USER_SCORE} from "../../store/saga/sagas/watchUserScore";
 
-export default function PlayingScreen({answerOnQuestion}) {
+export default function PlayingScreen() {
   const question = useSelector(selectCurrentQuestion);
   const dispatch = useDispatch();
   function answerQuestion(answer) {

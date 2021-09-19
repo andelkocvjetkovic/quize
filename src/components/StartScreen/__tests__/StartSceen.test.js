@@ -7,8 +7,8 @@ import {mockFetch} from "../../../../jest/mocks/mockFetch";
 import 'regenerator-runtime/runtime'
 let rootModal;
 beforeEach(() => {
-  mockFetch();
   jest.useFakeTimers();
+  mockFetch();
   window.scrollTo = jest.fn();
   rootModal = document.createElement('div');
   rootModal.setAttribute('id', 'portal-root');
