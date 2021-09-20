@@ -2,19 +2,26 @@ import React, {useState} from 'react';
 import Modal from "../Modal/Modal";
 import styles from './StartScreen.module.scss';
 import Settings from "../Settings/Settings";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {selectQuestionStatus} from "../../store/reducers/questionsSlice";
 import {LOADING} from "../../store/loadingEnum";
+import {playGame} from "../../store/reducers/gameSlice";
 
-export default function StartScreen({startQuiz}) {
+export default function StartScreen() {
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const isLoading = useSelector(selectQuestionStatus) === LOADING;
+  const dispatch = useDispatch();
+
   function toggleSettings() {
     setIsSettingsOpen(value => !value);
   }
 
   function closeModal() {
     setIsSettingsOpen(value => !value)
+  }
+
+  function startQuiz() {
+    dispatch(playGame())
   }
 
   return (

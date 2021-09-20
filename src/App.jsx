@@ -10,16 +10,13 @@ import {ACTION_USER_SCORE} from "./store/saga/sagas/watchUserScore";
 
 function App() {
   const gameStatus = useSelector(selectGameStatus);
-  const dispatch = useDispatch();
-
-
 
   if (gameStatus === GAME_START) {
-    return (<StartScreen startQuiz={() => dispatch(playGame())}/>)
+    return (<StartScreen />)
   } else if (gameStatus === GAME_PLAYING) {
     return <PlayingScreen/>
   } else if (gameStatus === GAME_END) {
-    return <EndScreen playAgain={() => dispatch(ACTION_PLAY_AGAIN())}/>
+    return <EndScreen />
   } else {
     return <div>Something went terribly wrong</div>
   }

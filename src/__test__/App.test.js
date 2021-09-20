@@ -6,6 +6,7 @@ import {act} from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import 'regenerator-runtime/runtime'
 import {mockResponseQuestion} from "../../jest/mocks/responseMock";
+
 let rootModal;
 beforeEach(() => {
   jest.useFakeTimers();
@@ -36,7 +37,7 @@ describe('<App />', () => {
     userEvent.click(button);
     expect(button).not.toBeInTheDocument();
   });
-  it('should answer on question, render next question, answer on each question correct, render end of game with 10 correct', async function () {
+  it('should answer on question, render next question, answer on each question correct, render end of game with 10 correct, click on play shows start screen', async function () {
     let getByRole, getByText;
     await act(async () => {
       ({getByRole, getByText} = renderWithProvider(<App/>))
@@ -60,23 +61,36 @@ describe('<App />', () => {
     getByText(/your score/i);
     getByText(/correct 10/i);
     getByText(/wrong 0/i);
+    const startAgain = getByRole('button',{name: /play again/i});
+    userEvent.click(startAgain);
+    getByText(/welcome to quiz/i);
+    getByRole('button',{name: /start the quiz/i});
   });
   it('should open settings and close it on click save changes', async function () {
-    let getByRole, getByText,getByLabelText,queryByLabelText;
+    let getByRole, getByText, getByLabelText, queryByLabelText;
     await act(async () => {
-      ({getByRole, getByText,getByLabelText,queryByLabelText} = renderWithProvider(<App/>))
+      ({getByRole, getByText, getByLabelText, queryByLabelText} = renderWithProvider(<App/>))
       jest.runAllTimers();
     })
-    const buttonSettings =getByRole('button',{name: /settings/i});
+    const buttonSettings = getByRole('button', {name: /settings/i});
     userEvent.click(buttonSettings);
     getByLabelText(/number of question/i);
     getByLabelText(/select category/i);
     getByLabelText(/select difficulty/i);
-    const buttonSaveChanges = getByRole('button',{name: /save changes/i});
+    const buttonSaveChanges = getByRole('button', {name: /save changes/i});
     userEvent.click(buttonSaveChanges);
     expect(queryByLabelText(/number of question/i)).not.toBeInTheDocument();
     expect(queryByLabelText(/select category/i)).not.toBeInTheDocument();
     expect(queryByLabelText(/select difficulty/i)).not.toBeInTheDocument();
+  });
+  it('button start the quiz should be disabled till fetching is done', async function () {
+    const {getByRole} = renderWithProvider(<App/>)
+    const startTheQuiz = getByRole('button', {name: /start the quiz/i});
+    expect(startTheQuiz).toBeDisabled();
+    await act(async () => {
+      jest.runAllTimers();
+    })
+    expect(startTheQuiz).not.toBeDisabled();
   });
 })
 

@@ -6,8 +6,14 @@ import {startGame} from "../../store/reducers/gameSlice";
 import {ACTION_PLAY_AGAIN} from "../../store/saga/sagas/watchPlayAgain";
 
 
-export default function EndScreen({playAgain}) {
+export default function EndScreen() {
   const score = useSelector(selectUserScore);
+  const dispatch = useDispatch();
+
+  function playAgain() {
+    dispatch(ACTION_PLAY_AGAIN())
+  }
+
   return (
     <div className={styles.Wrapper}>
       <div className={styles.Container}>
