@@ -1,7 +1,7 @@
 
 # Quize App
 
-A quize app with questions from https://opentdb.com/ . Build with React.js, Vite.js as build tool, Redux store with Redux-Saga and SCSS moduls. The app is tested with Jest as test runner and React Testing Library(38 tests)
+A quize app with questions from https://opentdb.com/ . Build with React.js, Vite.js as build tool, Redux store with Redux-Saga and SCSS moduls. The app is tested with Jest as test runner and React Testing Library
 
 
 ## Demo
